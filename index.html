@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Peminjaman Mobil</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Peminjaman Mobil</h1>
+        <button onclick="openForm()">Tambah Peminjaman</button>
+        
+        
+        <div id="formContainer" class="form-container">
+            <form id="peminjamanForm" onsubmit="submitForm(event)">
+                <label for="nama">Nama Peminjam:</label>
+                <input type="text" id="nama" required>
+
+                <label for="mobil">Mobil:</label>
+                <input type="text" id="mobil" required>
+
+                <label for="tanggal">Tanggal Peminjaman:</label>
+                <input type="date" id="tanggal" required>
+
+                <button type="submit">Submit</button>
+                <button type="button" onclick="closeForm()">Batal</button>
+            </form>
+        </div>
+
+        
+        <button onclick="openUpdateForm()">Update Peminjaman</button>
+        <div id="updateFormContainer" class="form-container">
+            <form id="updateForm" onsubmit="updateForm(event)">
+                <input type="hidden" id="updateIndex" value="">
+                <label for="updateNama">Nama Peminjam:</label>
+                <input type="text" id="updateNama" required>
+
+                <label for="updateMobil">Mobil:</label>
+                <input type="text" id="updateMobil" required>
+
+                <label for="updateTanggal">Tanggal Peminjaman:</label>
+                <input type="date" id="updateTanggal" required>
+
+                <button type="submit">Update</button>
+                <button type="button" onclick="closeUpdateForm()">Batal</button>
+            </form>
+        </div>
+
+        <div id="dataContainer" class="data-container"></div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
